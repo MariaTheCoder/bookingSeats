@@ -6,18 +6,18 @@ const allSeats = [
 
 const seats = document.querySelectorAll(".seats");
 
-seats.forEach((seat) => {
-  seat.addEventListener("click", function handleClick() {
+seats.forEach((seatElement) => {
+  seatElement.addEventListener("click", function handleClick() {
     const currentIndex = allSeats.findIndex(
-      (availableSeat) => availableSeat.id === seat.id
+      (seat) => seat.id === seatElement.id
     );
 
     allSeats[currentIndex].isBooked = !allSeats[currentIndex].isBooked;
 
     if (allSeats[currentIndex].isBooked) {
-      seat.classList.add("isBooked");
+      seatElement.classList.add("isBooked");
     } else {
-      seat.classList.remove("isBooked");
+      seatElement.classList.remove("isBooked");
     }
 
     console.log("allSeats: ", allSeats);
