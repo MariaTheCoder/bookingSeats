@@ -13,8 +13,8 @@ seats.forEach((seat) => {
       (availableSeat) => availableSeat.id === seat.id
     );
 
-    const currentIsBooked = availableSeats[currentIndex].isBooked;
-    availableSeats[currentIndex].isBooked = !currentIsBooked;
+    availableSeats[currentIndex].isBooked =
+      !availableSeats[currentIndex].isBooked;
 
     const bookedSeat = availableSeats.splice(currentIndex, 1);
     takenSeats.push(bookedSeat[0]);
