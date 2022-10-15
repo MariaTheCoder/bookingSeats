@@ -9,11 +9,12 @@ const seats = document.querySelectorAll(".seats");
 
 seats.forEach((seat) => {
   seat.addEventListener("click", function handleClick() {
-    seat.isBooked = true;
-
     const currentIndex = availableSeats.findIndex(
       (availableSeat) => availableSeat.id === seat.id
     );
+
+    const currentIsBooked = availableSeats[currentIndex].isBooked;
+    availableSeats[currentIndex].isBooked = !currentIsBooked;
 
     const bookedSeat = availableSeats.splice(currentIndex, 1);
     takenSeats.push(bookedSeat[0]);
