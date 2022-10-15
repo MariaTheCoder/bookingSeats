@@ -9,3 +9,7 @@
   margin: 20px;
   background-color: green;
 }
+
+.isBooked {
+  background-color: red;
+}
