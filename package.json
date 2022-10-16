@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/MariaTheCoder/bookingSeats/issues"
   },
-  "homepage": "https://github.com/MariaTheCoder/bookingSeats#readme"
+  "homepage": "https://github.com/MariaTheCoder/bookingSeats#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.0"
+  }
 }
