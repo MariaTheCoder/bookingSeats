@@ -7,19 +7,19 @@ const allSeats = [
 const seats = document.querySelectorAll(".seats");
 
 seats.forEach((seatElement) => {
-  seatElement.addEventListener("click", function handleClick() {
-    const currentIndex = allSeats.findIndex(
-      (seat) => seat.id === seatElement.id
-    );
-
-    allSeats[currentIndex].isBooked = !allSeats[currentIndex].isBooked;
-
-    if (allSeats[currentIndex].isBooked) {
-      seatElement.classList.add("isBooked");
-    } else {
-      seatElement.classList.remove("isBooked");
-    }
-
-    console.log("allSeats: ", allSeats);
-  });
+  seatElement.addEventListener("click", () => bookSeat(seatElement));
 });
+
+function bookSeat(seatElement) {
+  const currentIndex = allSeats.findIndex((seat) => seat.id === seatElement.id);
+
+  allSeats[currentIndex].isBooked = !allSeats[currentIndex].isBooked;
+
+  if (allSeats[currentIndex].isBooked) {
+    seatElement.classList.add("isBooked");
+  } else {
+    seatElement.classList.remove("isBooked");
+  }
+
+  console.log("allSeats: ", allSeats);
+}
